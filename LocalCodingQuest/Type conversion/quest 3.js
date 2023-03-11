@@ -1,0 +1,2 @@
+
+const valueToNumber = (value) => +value;
