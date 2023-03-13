@@ -49,3 +49,34 @@ const isPalindrome = (n) => {
     }
 }
 console.log(isPalindrome(212));
+
+// quest 6
+const equationHasRoots  = (a, b, c) => {
+        const d = Math.pow(b, 2) - 4 * a * c;
+        if (d < 0) {
+            return 'The equation has no roots';
+        } else {
+            return 'The equation has roots';
+        }
+}
+console.log(equationHasRoots(3, 2, 1));
+
+//quest 7
+const changeNumber = (n) => {
+    if (n > 0) {
+        return n * 2;
+    }
+    return n / 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
