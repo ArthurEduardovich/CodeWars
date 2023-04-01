@@ -20,11 +20,21 @@ console.log(keyInObject({ make: "Ford", year: 2020, color: "blue" }, "make", "mo
 
 // 3
 function bankTransaction(name, balance){
-  const nameClients = name['name'];
-  let calcBalance = null;
-  /*******************************/
-
+  let nameClient = name['name'];
+  let totalDeposit = 0;
+  if (balance.type === 'deposit'){
+    totalDeposit = name.balance + balance.amount;
+  }
+  if (balance.type === 'withdrawal' && balance.amount <= name.balance){
+    totalDeposit = name.balance - balance.amount;
+  }
+  if (balance.type === 'withdrawal' && balance.amount > name.balance){
+    return `Error: ${nameClient} has insufficient funds`;
+  }
+ return `Success: ${nameClient} has a balance of ${totalDeposit}`
 }
+console.log(bankTransaction({ name: "John Smith", balance: 5000 }, { type: "deposit", amount: 2000 }))
+console.log(bankTransaction({ name: "John Smith", balance: 5000 }, { type: "withdrawal", amount: 6000 }))
 
 
 
