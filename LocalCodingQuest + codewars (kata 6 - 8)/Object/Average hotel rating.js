@@ -73,9 +73,58 @@ function hasProperty(obj, key){
 }
 console.log(hasProperty({ name: "Helen", lastName: "Rock" }, "lastName"));
 
+// 7
+function clientInfo(obj, key, value){
+    if (key in obj) {
+        obj[key] = value;
+    } else {
+        obj[key] = value;
+    }
+    return obj;
+}
 
+// 8
+function numberSpec(obj, key1, key2, operator){
+    if (key1 in obj && key2 in obj){
+        let result =
+            operator === '+' ? `${obj[key1]} + ${obj[key2]} = ${obj[key1] + obj[key2]}`:
+            operator === '-' ? `${obj[key1]} - ${obj[key2]} = ${obj[key1] - obj[key2]}`:
+            operator === '*' ? `${obj[key1]} * ${obj[key2]} = ${obj[key1] * obj[key2]}`:
+            operator === '/' ? `${obj[key1]} / ${obj[key2]} = ${obj[key1] / obj[key2]}`:
+            'There is no such properties in object';
+        return result;
+    }
+    return 'There is no such properties in object';
+}
 
+// 9
+function addressBook(name, lastName, phone, email){
+    const totalName = name.trim().toUpperCase();
+    const totalLastName = lastName.trim().toUpperCase();
+    const totalEmail = email.trim().toLowerCase();
+    const totalPhone = 
+        phone.trim()[0] === '+' ? phone.trim(): `+${phone.trim()}`;
 
+        return {
+            name: totalName,
+            lastName: totalLastName,
+            phone: totalPhone,
+            email: totalEmail
+        }
+}
+
+// 10
+function forecast(obj){
+    let result = 
+    (obj['temperature'] === 20 && obj['humidity'] === 55)? 'Low risk':
+    (obj['temperature'] === 20 && obj['humidity'] === 70)? 'Low risk':
+    (obj['temperature'] === 25 && obj['humidity'] === 55)? 'Medium risk':
+    (obj['temperature'] === 30 && obj['humidity'] === 60)? 'Watch the situation':
+    (obj['temperature'] === 30 && obj['humidity'] === 30)? 'High risk':
+    (obj['temperature'] === 22 && obj['humidity'] === 51)? 'Medium risk':
+    'Watch the situation';
+    return result;    
+}
 
 
 
