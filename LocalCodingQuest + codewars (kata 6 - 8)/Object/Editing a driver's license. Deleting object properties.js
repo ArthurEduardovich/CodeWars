@@ -38,7 +38,7 @@ function numberSum(count,n1,n2,n3,n4){
   }
   return count;
 }
-console.log(numberSum({oddPositive: 0, evenPositive: 0, fractional: 0}, 1, 2, 3, 4))
+// console.log(numberSum({oddPositive: 0, evenPositive: 0, fractional: 0}, 1, 2, 3, 4))
 
 // 5
 function clientinfo(address,postalCode){
@@ -55,14 +55,44 @@ weather['winter'] = sum;
   weather.averageTemperature = (weather['summer'] + weather['winter'] + weather['autumn'] + weather['spring']) / 4;
   return weather;
 }
-console.log(averageTemperature({summer: 0, autumn:10, winter: 25, spring:15}))
+// console.log(averageTemperature({summer: 0, autumn:10, winter: 25, spring:15}))
 
 // 7
+function receipt(template, amount, number){
+  let calcDiscount =
+    (amount >= 1000) ? (amount / 100 * 10): 'Thank you for your purchase!';
+
+  template['purchaseAmount'] = amount;
+  template['receiptNumber'] = number;
+
+  if (typeof calcDiscount !== 'number'){
+    template['message'] = calcDiscount;
+    delete template['discount'];
+    template['finalAmount'] = amount;
+  } else {
+    template['discount'] = calcDiscount;
+    template['finalAmount'] = amount - calcDiscount;
+  }
+  return template;
+}
+
+// console.log(receipt({purchaseAmount: 0, receiptNumber: 0}, 2000, 14562))
+// console.log(receipt({purchaseAmount: 0, receiptNumber: 0}, 100, 1))
+// console.log(receipt({purchaseAmount: 0, receiptNumber: 0}, 1000, 1))
+// {purchaseAmount: 1000, receiptNumber: 1, discount: 10, finalAmount: 900})
+// {purchaseAmount: 100, receiptNumber: 1, message: Thank you for your purchase!, finalAmount: 100})
+// {purchaseAmount: 2000, receiptNumber: 14562, discount: 10, finalAmount: 1800})
 
 
-
-
-
+// 8
+  function tileStash(tile){
+    const nonConformance = tile['damaged'] + tile['defect'] + tile['lost'];
+    delete tile['damaged'];
+    delete tile['defect'];
+    delete tile['lost'];
+    tile.nonConformance = nonConformance;
+    return tile;
+  }
 
 
 
