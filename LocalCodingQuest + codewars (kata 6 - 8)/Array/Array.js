@@ -133,9 +133,68 @@ const firstBigger = (arr) => {
 
 // 12
 const lastEvenElement = (arr) => {
-    for (let i = 0; i < arr.length - 1; i++){
-        if (arr[i + 1] % 2 !== 0 && i === arr.length - 1){
-            return [arr[i], i];
+    let num = 0;
+    let index = 0;
+    for (let i = arr.length - 1; i >= 0; i--){
+            if (arr[i] % 2 === 0){
+               return [arr[i], i]
+            } 
+        }   
+}
+
+// 13
+function fahrenheit(t1, t2){
+    let resultArr = [];
+    for (let i = t1; i <= t2; i++){
+        resultArr.push(+(i * (9/5) + 32).toFixed(1))
+    }
+    return resultArr;
+}
+console.log(fahrenheit(1,10))
+
+// 14
+function changeArray(prices){
+    return prices.map((el) => el * 2);
+}
+console.log(changeArray([10, 20]))
+
+// 15
+function isNegativeInArray(arr){
+    let result = false;
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i] < 0) result = true;
+    }
+    return result;
+}
+
+// 16
+function isZeroInArray(arr){
+    let result = false;
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i] === 0) result = true;
+    }
+    return result;
+}
+
+// 17
+function isElementInArray(arr){
+    let num = false;
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i + 1] === arr[i] + arr[i + 2]) {
+        num = arr[i + 1];
+        break;
         }
     }
+    return num !== false? `true: it is ${num}`: num;
+}
+// console.log(isElementInArray( [-5,-3,2,-2]))
+// console.log(isElementInArray([-1,0,-1,-1,-2,0,1,0,-1]))
+
+// 18
+function countOfWords(arr){
+    let count = 0;
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i].length === 5) count++;
+    }
+    return count;
 }
