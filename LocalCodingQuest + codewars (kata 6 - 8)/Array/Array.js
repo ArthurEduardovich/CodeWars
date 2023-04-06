@@ -198,3 +198,22 @@ function countOfWords(arr){
     }
     return count;
 }
+
+// 19
+function equalElementsInArray (arr){
+    if (arr.length === 0) return []
+    for (let i = 0; i < arr.length - 1; i++){
+        for (let j = i + 1; j < arr.length; j++){
+            if (arr[i] === arr[j])
+            return [arr[i], arr[j]]
+        }
+    }
+    return 'All elements are different'
+}
+console.log(equalElementsArray([0, 8, 3, 1, 4, 5, 6]))
+
+// 20
+function pointsInsideRing (arr, r1, r2){
+    let count = 0;
+    
+}
