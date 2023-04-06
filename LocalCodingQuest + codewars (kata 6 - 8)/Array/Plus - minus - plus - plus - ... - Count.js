@@ -1,17 +1,11 @@
-const catchSignChange = arr => {
-    let count = 0;
-    for (let i = 0; i < arr.length - 2; i++){
-        if (modifyMathSign(arr[i]) !== modifyMathSign(arr[i + 1])) count++;
-        else count;
+    const catchSignChange = arr => {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++){
+            if (arr[i] < 0 && arr[i + 1] >= 0) count++;
+            if (arr[i] >= 0 && arr[i + 1] < 0) count++;
+            if (arr[i] === arr[i + 1]) count;
+        }
+        return count;
     }
-    return count;
-}
 
-function modifyMathSign(value){
-    if (value < 0 || Object.is(value, -0)){
-        return -1;
-    } else {
-        return 1;
-    }
-}
-console.log(catchSignChange([1, -3, -4, 0, 5]))
+console.log(catchSignChange([1, -3, -4, 0, 5]));
