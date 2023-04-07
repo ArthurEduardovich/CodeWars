@@ -21,9 +21,31 @@ const sumOfGoals = (arr) => {
 console.log(sumOfGoals([[1,2,3],[3,3,3]]))
         
 
+function changeMaxAndMin(arr){
+    let max = arr[0], indexMax = 0;
+    let min = arr[0], indexMin = 0;
+    for (let i = 1; i < arr.length; i++){
+      if (arr[i] > max) {
+        max = arr[i]
+        indexMax = i;
+      }
+      if (arr[i] < min) {
+        min = arr[i];
+        indexMin = i;
+      }
+    
+    }
+    arr[indexMax] = min;
+    arr[indexMin] = max;
+    return arr;
+  }
+  console.log(changeMaxAndMin([29,14,9,3,24,0]))
 
 
-
-
-
-
+const theLongestWord = function (arr) {
+    let maxLengthStr = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i].length > maxLengthStr.length) maxLengthStr = arr[i]
+    }
+    return maxLengthStr;
+}
