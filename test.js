@@ -1,52 +1,42 @@
-function squares(arr){
-    let squareSum = 0;
-    let sumSqaure = 0;
-    for (let i = 0; i < arr.length; i++){
-    squareSum+= arr[i];
-    sumSqaure+= arr[i] ** 2;
-    }
-    return ( Math.pow(squareSum, 2) - sumSqaure );
-    }
-    console.log(squares([2, 1, 4]))
 
-const sumOfGoals = (arr) => {
-    let sumGoal = 0;
-    for (let i = 0; i < arr.length; i++){
-        for (let j = 0; j < arr[i].length; j++){
-            sumGoal+= arr[i][j];
+const contacts = [
+    {
+      firstName: "Akira",
+      lastName: "Laine",
+      number: "0543236543",
+      likes: ["Pizza", "Coding", "Brownie Points"],
+    },
+    {
+      firstName: "Harry",
+      lastName: "Potter",
+      number: "0994372684",
+      likes: ["Hogwarts", "Magic", "Hagrid"],
+    },
+    {
+      firstName: "Sherlock",
+      lastName: "Holmes",
+      number: "0487345643",
+      likes: ["Intriguing Cases", "Violin"],
+    },
+    {
+      firstName: "Kristian",
+      lastName: "Vos",
+      number: "unknown",
+      likes: ["JavaScript", "Gaming", "Foxes"],
+    },
+  ];
+
+  function lookUpProfile(name, prop) {
+    let a = null;
+    for (let i = 0; i < contacts.length; i++) {
+        if (contacts[i]['firstName'] === name && prop in contacts[i]){
+            a = contacts[i][prop];
+            return a;
+        } 
+        if (contacts[i]['firstName'] === name && (prop in contacts[i]) === false){
+            a = 'No such property'
         }
+        if ()
     }
-    return sumGoal;
-}
-console.log(sumOfGoals([[1,2,3],[3,3,3]]))
-        
-
-function changeMaxAndMin(arr){
-    let max = arr[0], indexMax = 0;
-    let min = arr[0], indexMin = 0;
-    for (let i = 1; i < arr.length; i++){
-      if (arr[i] > max) {
-        max = arr[i]
-        indexMax = i;
-      }
-      if (arr[i] < min) {
-        min = arr[i];
-        indexMin = i;
-      }
-    
-    }
-    arr[indexMax] = min;
-    arr[indexMin] = max;
-    return arr;
   }
-  console.log(changeMaxAndMin([29,14,9,3,24,0]))
-
-
-const theLongestWord = function (arr) {
-    let maxLengthStr = arr[0];
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i].length > maxLengthStr.length) maxLengthStr = arr[i]
-    }
-    return maxLengthStr;
-}
-
+  console.log(lookUpProfile("Sherlock", "likes"));
