@@ -27,16 +27,24 @@ const contacts = [
   ];
 
   function lookUpProfile(name, prop) {
-    let a = null;
+    let a = '';
+
     for (let i = 0; i < contacts.length; i++) {
-        if (contacts[i]['firstName'] === name && prop in contacts[i]){
+        if (contacts[i]['firstName'] === name && prop in contacts[i]) {
             a = contacts[i][prop];
-            return a;
-        } 
-        if (contacts[i]['firstName'] === name && (prop in contacts[i]) === false){
-            a = 'No such property'
+          return a;
+
+        } else if (){
+          a = 'No such contact';
+          continue;
+
+        } else {
+          a = 'No such property'
+          continue;
         }
-        if ()
     }
+    return a;
   }
   console.log(lookUpProfile("Sherlock", "likes"));
+  console.log(lookUpProfile("Akira", "address"))
+  console.log(lookUpProfile("Bob", "potato"))
