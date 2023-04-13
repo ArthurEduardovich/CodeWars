@@ -1,7 +1,5 @@
 function mergeArrays (a, b) {
     const result = []
-    const concatArray = a.concat(b).length;
-
     for (let i = 0; ; i++){
         if (a[i] !== undefined && b[i] !== undefined){
             result.push(a[i])
@@ -16,8 +14,6 @@ function mergeArrays (a, b) {
     }
     return result;
 }
-
-
 console.log(mergeArrays([1, 2, 3, 4, 5, 6, 7, 8], ['a', 'b', 'c', 'd', 'e']));
 
 
