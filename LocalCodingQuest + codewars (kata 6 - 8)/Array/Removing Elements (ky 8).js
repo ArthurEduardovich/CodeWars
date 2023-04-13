@@ -1,8 +1,8 @@
-const removeEveryOther = (arr) => {
-    const result = arr.filter((el, index) => {
-        if (index % 2 == 0) return el;
-    })
-    return result;
-}
+const arrayDiff = (a, b) => {
 
-console.log(removeEveryOther([['Goodbye'], {'Great': 'Job'}]))
+
+    
+    return result; 
+
+}
+console.log(arrayDiff([1, 2, 3], [1, 2])) // [3]
