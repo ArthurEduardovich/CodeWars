@@ -10,7 +10,7 @@ function countdown(n) {
     }
 }
 
-// console.log(countdown(5));
+console.log(countdown(5));
 
 // 2 recursion от 6 до 9
 function rangeOfNumbers(startNum, endNum){
