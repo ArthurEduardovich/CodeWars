@@ -20,3 +20,9 @@ console.log(null == undefined) // true
 console.log(null ** 2) // true
 
 
+function elementNumber (arr,str){
+   let modifyStr = str.trim().toLowerCase();
+   
+   
+ }
+
