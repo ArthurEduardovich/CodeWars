@@ -31,3 +31,49 @@ const arrayModifier = (arr1, arr2) => {
 };
 
 // console.log(arrayModifier(["black", "white", "red", "green", "blue"], ["yellow", "orange"]));
+
+// 4 Morse code
+function codeMorse(str){
+    const morse = {
+        A: '.-',
+        B: '-...',
+        C: '-.-.',
+        D: '-..',
+        E: '.',
+        F: '..-.',
+        G: '--.',
+        H: '....',
+        I: '..',
+        J: '.---',
+        K: '-.-',
+        L: '.-..',
+        M: '--',
+        N: '-.',
+        O: '---',
+        P: '.--.',
+        Q: '--.-',
+        R: '.-.',
+        S: '...',
+        T: '-',
+        U: '..-',
+        V: '...-',
+        W: '.--',
+        X: '-..-',
+        Y: '-.--',
+        Z: '--..',
+      };
+    const arrResult = [];
+    for (let i = 0; i < str.length; i++){
+        if (str[i] === ' ') continue;
+        if (morse.hasOwnProperty(str[i].toUpperCase())){
+            arrResult.push(morse[str[i].toUpperCase()]);
+            arrResult.push(' ');
+        } else {
+            arrResult.push(str[i]);
+            arrResult.push(' ')
+        }
+    };
+    return arrResult.join('').trim();
+};
+console.log(codeMorse("MarcO"))
+console.log(codeMorse(" 94 6"))
