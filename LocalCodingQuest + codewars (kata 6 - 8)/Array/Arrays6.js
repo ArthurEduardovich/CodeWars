@@ -75,5 +75,44 @@ function codeMorse(str){
     };
     return arrResult.join('').trim();
 };
-console.log(codeMorse("MarcO"))
-console.log(codeMorse(" 94 6"))
+// console.log(codeMorse("MarcO"))
+// console.log(codeMorse(" 94 6"))
+
+// 5 Fixed bugs
+function bugFixer(arr){
+    for (const c of arr){
+        if (c === 'bug'){
+            arr.splice(arr.indexOf(c), 1, 'FIX')
+        }
+    }
+    return arr;
+}
+// console.log(bugFixer([1, 2, "bug", "One", "Two", "Three", "bug", "bug"]));
+
+// 6 Dogs communiqe
+function dogResponse(arr){
+    const calcRepeat = () => arr[0].length - arr[1];
+
+    const barkOrHello = 
+    calcRepeat() < 0? 'hello!':
+    'bark! '.repeat(calcRepeat()).trimEnd();
+
+    return `${arr[0]}: ${barkOrHello}`
+};
+
+// console.log(dogResponse(['Bobby', 2]))
+
+// 7 ToDo
+function mainTasks(tasks, toDoFirst, toDoLast){
+        
+    const toDoFirstValue = `Before ${tasks[tasks.indexOf(toDoFirst) + 1]}`
+    const toDoLastValue = `After ${tasks[tasks.indexOf(toDoLast) - 1]}`
+
+    const obj = {
+        [toDoFirst]: toDoFirstValue,
+        [toDoLast]: toDoLastValue,
+    }
+    return obj;
+};
+
+console.log(mainTasks(["Getting up", "Working", "Eating", "Reading", "Sleeping"], "Getting up", "Reading"));
