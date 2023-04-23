@@ -59,3 +59,26 @@ function fillArray(n, m){
 };
 // console.log(fillArray(-5, 5))
 
+// 6
+function fillProgression(a1, d, n){
+  const arr = []; // массив куда будем собирать элементы
+  let start = a1; //
+  for (let i = 0; i < n; i++){
+    arr.push(start);
+    start+= d;
+  }
+  return arr;
+}
+// console.log(fillProgression(-11, 4, 6))
+
+// 7
+function progressionMembers(firstMember, denominator, n){
+  const arr = [];
+  let summator = firstMember;
+  for (let i = 0; i < n; i++){
+    arr.push(summator);
+    summator*= denominator;
+  }
+  return arr;
+};
+console.log(progressionMembers(1, 2, 10))
