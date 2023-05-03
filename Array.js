@@ -1,4 +1,4 @@
-function digitize(n) {
-  return n.toString().split('').reverse().map((el) => Number(el))
+function findUniq(arr) {
+  return arr.sort().join('').toUpperCase()
 }
-console.log(digitize(32333))
+console.log(findUniq(['Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a']))
