@@ -66,4 +66,27 @@ function reverseString (str, breakPoint) {
     return acc;
 }
 
-// 7 
+// 7 Separating words in a line
+function wordsDivider (str) {
+    if (str.length == 0) return [];
+    let acc = [];
+    let box = '';
+    for (let i = 0; i < str.length; i++){
+        if (str[i] !== ' ') box+= str[i];
+        else {
+            acc.push(box)
+            box = ''
+        }
+    }
+    acc.push(box);
+    return acc;
+}
+// console.log(wordsDivider(''));
+
+// 8 Select a longer line
+function biggerString (str1, str2) {
+    const res = str1.length > str2.length? str1.split('').reverse():
+    str2.split('').reverse();
+    return res;
+}
+// console.log(biggerString('abcqq','abc'));
