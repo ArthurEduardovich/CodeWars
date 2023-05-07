@@ -56,6 +56,3 @@ function createArrayFromNToM(n, m){
   return result;
 }
 console.log(createArrayFromNToM(5, 10))
-
-// 7
-
