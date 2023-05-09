@@ -3,7 +3,7 @@ function removeAtIndex (arr, i) {
     arr.splice(i, 1);
     return arr;
 }
-console.log(removeAtIndex([1, 2, 3, 4, 5, 6], 2));
+// console.log(removeAtIndex([1, 2, 3, 4, 5, 6], 2));
 
 // 2 
 function insertAtIndex (arr, i, el) {
@@ -18,3 +18,7 @@ function replaceAtIndex (arr, index, newValue) {
     return arr;
 }
 // console.log(replaceAtIndex([1, 2, 3, 4, 5, 6], 1, 55))
+
+const arr = ['ice', true, 'yes', null, 'sea', 'no'];
+console.log(arr.splice(0, 2, 'smile'));
+console.log(arr);
