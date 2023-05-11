@@ -27,3 +27,35 @@ function isPalindrome (str) {
     if (checkInPalindrome(str1) === false && checkInPalindrome(str2) === true) return `${str2} is palindrome`;
     return "none of them is palindrome";
 }
+
+// 4
+function checkArray(arr){
+    for (let i = 0; i < arr[0].length / 2; i++){
+      if (arr[0][i] !== arr[0][arr[0].length - 1 - i]) return false;
+    }
+    return true;
+}
+console.log(checkArray(["madam"]))
+console.log(checkArray(["hello"]))
+
+// 5
+function makePalindrome(str){
+    let strToPalindrome = str;
+    for (let i = 0; i < str.length; i++){
+      strToPalindrome+= str[str.length - 1 - i];
+    }
+    return strToPalindrome;
+}
+console.log(makePalindrome('cat'));
+
+// 6
+function isArrayPalindrome(arr){
+    let str = ''
+    for (let i = 0; i < arr.length; i++){
+      str+= arr[i];
+    }
+    for (let i = 0; i < str.length / 2; i++){
+      if (str[i] !== str[str.length - 1 - i]) return false;
+    }
+    return true;
+  }
