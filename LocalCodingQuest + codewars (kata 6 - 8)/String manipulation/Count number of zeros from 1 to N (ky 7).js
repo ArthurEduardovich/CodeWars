@@ -1,4 +1,4 @@
-function countZeros(n) {
+function countZeros(n) {   
     let count = 0;
     for (let i = 1; i <= n; i++){
         let nToStr = String(i);
