@@ -35,8 +35,8 @@ function checkArray(arr){
     }
     return true;
 }
-console.log(checkArray(["madam"]))
-console.log(checkArray(["hello"]))
+// console.log(checkArray(["madam"]))
+// console.log(checkArray(["hello"]))
 
 // 5
 function makePalindrome(str){
@@ -46,7 +46,7 @@ function makePalindrome(str){
     }
     return strToPalindrome;
 }
-console.log(makePalindrome('cat'));
+// console.log(makePalindrome('cat'));
 
 // 6
 function isArrayPalindrome(arr){
@@ -67,3 +67,4 @@ function isArrayPalindrome(arr){
     }
     return `${str} is palindrome`
   }
+
