@@ -66,4 +66,4 @@ function isArrayPalindrome(arr){
       if (str[i] !== str[str.length - 1 - i]) return `${str} is not palindrome`
     }
     return `${str} is palindrome`
-  
+  }
