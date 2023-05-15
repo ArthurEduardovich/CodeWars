@@ -1,11 +1,12 @@
 // 1
-function reverseStrAndCase(s){
-    let result = '';
-    for (let i = 0; i < s.length; i++){
-      if (s[i] === s[i].toLowerCase()) result = s[i].toUpperCase() + result;
-      else result = s[i].toLowerCase() + result;
+function testit(s){
+    let stoArr = s.split(' ');
+    let result = [];
+    for (const el of stoArr){
+        if (!el) return ''
+        result.push(el.slice(0, -1).toLowerCase() + el[el.length - 1].toUpperCase());
     }
-    return result;
+    return result.join(' ');
 }
-// console.log(reverseStrAndCase('Hi There'));
+console.log(testit(''));
 
