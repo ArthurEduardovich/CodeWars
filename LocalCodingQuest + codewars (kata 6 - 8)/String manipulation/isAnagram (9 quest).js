@@ -37,4 +37,38 @@ function isAnagram3(str1, str2){
     }
     return true;
 }
-console.log(isAnagram3('123', '923'));
+// console.log(isAnagram3('123', '923'));
+
+// 4
+function isAnagram4(str1, str2){
+    function delSpaced(s){
+        let result = '';
+        for (const el of s){
+            if (el !== ' ') result+= el.toLowerCase();
+        }
+        return result;
+    }
+    const s1 = delSpaced(str1);
+    const s2 = delSpaced(str2);
+    if (s1.length !== s2.length) return false;
+    for (let i = 0; i < s1.length; i++){
+        for (let j = 0; j < s2.length; j++){
+            if (s1[i] === s2[j]) break;
+            if (s1.length - 1 === j) return false;
+        }
+    }
+    return true;
+}
+
+// 5
+function isAnagram5 (arr){
+    const checkLength = () => {
+        const firstLength = arr[0].length;
+        for (let i = 1; i < arr.length; i++){
+            if (firstLength !== arr[i].length) return false;
+        }
+        return true;
+    }
+    
+}
+console.log(isAnagram5(['elbow','below','ebowl'])); // true
