@@ -79,5 +79,17 @@ const countFirstAndSecondEl = (str) => {
 
 // 7
 const objectValues = (str) => {
+  const lowerStr = str.toLowerCase();
+  const object = {};
+  for (const el of lowerStr) {
+    if (object[el]) object[el]++;
+    else object[el] = 1;
+  }
+  return Object.values(object);
+};
+// console.log(objectValues('Onion'));
+
+// 8
+const objectEntriesJoin = (str) => {
     
 };
