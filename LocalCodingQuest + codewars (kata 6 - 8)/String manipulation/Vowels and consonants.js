@@ -54,7 +54,7 @@ const countLetters2 = function (str) {
 // console.log(countLetters2('aAbcde'));
 
 // 5 Какая строка содержит больше гласных
-const whatWin = (str1, str2) => {
+const whatWin1 = (str1, str2) => {
   const vowels = 'aeiou';
   const calcVowels = (s) => {
     // отдельная функция будет считать количество гласных букв в каждой строке
@@ -73,6 +73,20 @@ const whatWin = (str1, str2) => {
 // console.log(whatWin('a', 'b'));
 
 // 6 Какая строка содержит больше согласных?
-const whatWins = (str1, str2) => {
-  
-}
+const whatWin2 = (str1, str2) => {
+  const vowel = 'aeiou';
+  const counterOfVowel = (s) => {
+    let count = 0;
+    for (const el of s) {
+      if (vowel.includes(el) || el === ' ') continue;
+      else count++;
+    }
+    return count;
+  };
+  return counterOfVowel(str1) > counterOfVowel(str2)
+    ? 'First word wins!'
+    : counterOfVowel(str1) < counterOfVowel(str2)
+    ? 'Second word wins!'
+    : `It's a draw!`;
+};
+// console.log(whatWin2('run', 'late'));
