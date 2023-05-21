@@ -53,5 +53,26 @@ const countLetters2 = function (str) {
 };
 // console.log(countLetters2('aAbcde'));
 
-// 5
+// 5 Какая строка содержит больше гласных
+const whatWin = (str1, str2) => {
+  const vowels = 'aeiou';
+  const calcVowels = (s) => {
+    // отдельная функция будет считать количество гласных букв в каждой строке
+    let count = 0;
+    for (const el of s) {
+      if (vowels.includes(el)) count++;
+    }
+    return count;
+  };
+  return calcVowels(str1) > calcVowels(str2)
+    ? 'First word wins!'
+    : calcVowels(str1) < calcVowels(str2)
+    ? 'Second word wins!'
+    : `It's a draw!`;
+};
+// console.log(whatWin('a', 'b'));
 
+// 6 Какая строка содержит больше согласных?
+const whatWins = (str1, str2) => {
+  
+}
