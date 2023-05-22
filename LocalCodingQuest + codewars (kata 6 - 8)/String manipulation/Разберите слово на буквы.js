@@ -17,3 +17,7 @@ const specTheWord = (str) => {
   }
   return obj;
 };
+
+let str = 'baby';
+let news = str.padEnd(0, 'cute')
+console.log(news)   
