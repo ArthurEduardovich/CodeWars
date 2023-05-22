@@ -91,5 +91,32 @@ const objectValues = (str) => {
 
 // 8
 const objectEntriesJoin = (str) => {
-    
+  const lowerStr = str.toLowerCase(); // опускает аргумент в нижний регистр
+  const object = {};
+  for (const el of lowerStr) {
+    if (object[el]) object[el]++;
+    else object[el] = 1;
+  }
+  return Object.entries(object).join(' ');
 };
+// console.log(objectEntriesJoin('sleep'));
+
+// 9
+const objectEntries = (arr) => {
+  const strToLower = arr.join('').toLowerCase();
+  const object = {};
+  for (const el of strToLower) {
+    if (object[el]) object[el]++;
+    else object[el] = 1;
+  }
+  return Object.entries(object)
+};
+// console.log(objectEntries(['honor', 'arena']));
+
+const object = {
+    key: 1,
+    keys: {
+        value: 1
+    }
+}
+console.log(Object.values(object))
