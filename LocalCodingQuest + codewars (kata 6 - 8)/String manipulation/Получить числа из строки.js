@@ -26,4 +26,33 @@ function countDigitInNumber(number, digit) {
   }
   return `In number ${number} digit ${digit} occurs ${count} times`;
 }
-console.log(countDigitInNumber(123123, 3));
+// console.log(countDigitInNumber(123123, 3));
+
+// 4 Выбрать из строки все цифры и записать их в массив
+function digitsToArray(str) {
+  let array = [];
+  let countList = '0123456789';
+  for (const el of str) {
+    if (countList.indexOf(el) !== -1) array.push(Number(el));
+  }
+  return array;
+}
+// console.log(digitsToArray('abc123'));
+
+// 5 Выбрать из строки все числа и записать их в массив
+function numbersToArray (str) {
+  let numList = '0123456789';
+  let array = [];
+  let acc = '';
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] == '') continue;
+    if (numList.includes(str[i])) {
+        acc+= str[i];
+    } else {
+        array.push(Number(acc));
+        acc = '';
+    }
+  }
+  return array;
+}
+console.log(numbersToArray('a bc 12 3')); // [12, 3]
