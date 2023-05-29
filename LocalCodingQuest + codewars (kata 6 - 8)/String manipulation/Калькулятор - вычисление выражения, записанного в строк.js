@@ -1,17 +1,23 @@
 function calculateExpression(str) {
   let arr = [];
-  let indexSymbol = 0;
   let acc = '';
   for (let i = 0; i < str.length; i++) {
-    if (!isNaN(str[i])){
-        acc+= str[i];
+    if (str[i] !== '+' && str[i] !== '-' && str[i] !== '*' && str[i] !== '/') {
+      acc += str[i];
     } else {
-        arr.push(+acc);
-        acc = ''
-        indexSymbol = i;
+      arr.push(+acc);
+      arr.push(str[i]);
+      acc = '';
     }
   }
-  arr.push(+acc)
-  return 
+  function calculate([fistN, op, twoN] = arr) {
+    if (op === '+') return fistN + twoN;
+    if (op === '-') return fistN - twoN;
+    if (op === '/') return fistN / twoN;
+    if (op === '*') return fistN * twoN;
+  }
+  arr.push(+acc);
+  return calculate();
 }
-console.log(calculateExpression('21+39')) // 60
+console.log(calculateExpression('0.25+20.05')); // 20.3
+console.log(calculateExpression('1.5/0.5')); // 3
